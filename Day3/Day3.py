@@ -1,22 +1,32 @@
 def main():
     num = 0
-
+    count_flag = 0
+    line_list = []
+    # let_check = ""
     with open("Input.txt") as f:
         while True:
 
+            # line.append(f.readline())
+            count_flag += 1
             line = f.readline()
-            half1 = line[:len(line)//2]
-            half2 = line[len(line)//2:]
+            line_list.append(line)
             
             if not line:
                 break
+            
+            if(count_flag % 3 == 0):
+                print(line_list)
 
-            for x in range(len(half1)):
-                if(half2.find(half1[x]) != -1):
-                    num = num + priNum(half1[x])
-                    # print(half1[x])
-                    print(num)
-                    break
+                for x in range(len(line_list[0])):
+                    if(line_list[1].find(line_list[0][x]) != -1  and line_list[2].find(line_list[0][x]) != -1):
+                        print(line_list[0][x])
+                        num+= priNum(line_list[0][x])
+                        break
+
+                line_list.clear()
+                print(num)
+            
+
         
 
 def priNum(item):
