@@ -6,7 +6,6 @@ def main():
     with open("Input.txt") as f:
         while True:
 
-            # line.append(f.readline())
             count_flag += 1
             line = f.readline()
             line_list.append(line)
@@ -25,8 +24,6 @@ def main():
 
                 line_list.clear()
                 print(num)
-            
-
         
 
 def priNum(item):
