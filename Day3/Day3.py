@@ -2,7 +2,7 @@ def main():
     num = 0
     count_flag = 0
     line_list = []
-    # let_check = ""
+
     with open("Input.txt") as f:
         while True:
 
